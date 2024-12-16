@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Question number 9 javascript events</h1>
+    <div>
+        <h4>Javascript events</h4>
+        <p>chnage para</p>
+        <button onclick="clickEvent()">click me</button>
+        <button onmouseenter="onMouseEvent()">Mouse</button>
+    </div>
+    <script>
+        const clickEvent = () => {
+            alert("This is event")
+        }
+        const onMouseEvent = () => {
+            alert("Hay this is on mouse enter event")
+        }
+    </script>
+
+
+    <h1>Qusetion number 10 JavaScript DOM</h1>
+    <div>
+        <h4>DOM Manipulation Example</h1>
+            <button id="addParagraph">Add Paragraph</button>
+            <div class="container" id="content"></div>
+    </div>
+    <script>
+        const addParagraphButton = document.getElementById('addParagraph');
+        const contentContainer = document.getElementById('content');
+
+        let paragraphCount = 0;
+
+        addParagraphButton.addEventListener('click', () => {
+            paragraphCount++;
+
+            const newParagraph = document.createElement('p');
+
+            newParagraph.textContent = `This is paragraph number ${paragraphCount}.`;
+            if (paragraphCount == 10) {
+                let a = confirm("You can add only 10 para")
+                if (a) {
+                    window.location.reload()
+                }
+            }
+            contentContainer.appendChild(newParagraph);
+        });
+
+    </script>
+
+    <h1>Question number 11 JSON in ja</h1>
+    <p>Check console</p>
+    <script>
+        // ex 1
+        let json = {
+            "Name": "varun singh",
+            "age": 20,
+            "course": "BCA"
+        }
+        console.log(json)
+
+        //ex 2
+        let obj = {
+            name: "Nitin",
+            course: "BCA",
+            age: 20
+        }
+        const json1 = JSON.stringify(obj)
+        console.log(json1)
+        console.log(JSON.parse(json1))
+    </script>
+
+    
+</body>
+
+</html>
